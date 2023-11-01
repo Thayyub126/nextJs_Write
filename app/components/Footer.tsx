@@ -2,6 +2,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -38,7 +39,7 @@ const Footer: React.FC = () => {
               <Col lg={6} col={12} className="footer-grid">
                 <div className="footer-grid-innv">
                   <h2>
-                    <a className="logo-icon" href="index.html">
+                    <Link className="logo-icon" href="index.html">
                       <Image
                         src="/assets/images/logo.png" // Update the path to your image
                         alt=""
@@ -47,28 +48,28 @@ const Footer: React.FC = () => {
                         className="img-fluid"
                       />{" "}
                       <span>Write.link</span>
-                    </a>
+                    </Link>
                   </h2>
                   <p className="footer-p">
                     Write blogs that live forever on the decentralized web.
                     Giving power back to the Writers.
                   </p>
                   <div className="main-social-footer-29 mt-4">
-                    <a
+                    <Link
                       href="https://www.instagram.com/onew3com/"
                       className="instagram"
                     >
                       <span className="fab fa-instagram"></span>
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="https://www.facebook.com/1W3io/"
                       className="facebook"
                     >
                       <span className="fab fa-facebook-f"></span>
-                    </a>
-                    <a href="https://twitter.com/1w3io" className="twitter">
+                    </Link>
+                    <Link href="https://twitter.com/1w3io" className="twitter">
                       <span className="fab fa-twitter"></span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -77,14 +78,14 @@ const Footer: React.FC = () => {
                 <div className="footer-listw3-grids">
                   <ul className="footer-listw3">
                     <li>
-                      <a href="#arweave" target="_blank">
+                      <Link href="#arweave" target="_blank">
                         Arweave
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#ipfs" target="_blank">
+                      <Link href="#ipfs" target="_blank">
                         IPFS
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -94,14 +95,14 @@ const Footer: React.FC = () => {
                 <div className="footer-listw3-grids">
                   <ul className="footer-listw3">
                     <li>
-                      <a href="#ens" target="_blank">
+                      <Link href="#ens" target="_blank">
                         ENS
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#space" target="_blank">
+                      <Link href="#space" target="_blank">
                         Space ID
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -111,19 +112,19 @@ const Footer: React.FC = () => {
                 <div className="footer-listw3-grids">
                   <ul className="footer-listw3">
                     <li>
-                      <a href="#terms" target="_blank">
+                      <Link href="#terms" target="_blank">
                         Terms & Conditions
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#support" target="_blank">
+                      <Link href="#support" target="_blank">
                         Support
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#blog" target="_blank">
+                      <Link href="#blog" target="_blank">
                         Blog
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

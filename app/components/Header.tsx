@@ -2,7 +2,7 @@
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from 'next/image';
+import Image from "next/image";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,18 +25,18 @@ function Header() {
     <>
       <header
         id="site-header"
-        className={`fixed-top ${scrolled ? "scrolled" : ""}`}
+        className={` fixed-top ${scrolled ? "scrolled" : ""}`}
       >
         <Container>
           <Navbar expand="lg" variant="light">
             <Navbar.Brand href="/">
-            <Image
-  src="/assets/images/logo.png"
-  alt=""
-  width={36}
-  height={36}
-  className="d-inline-block align-top"
-/>
+              <Image
+                src="/assets/images/logo.png"
+                alt=""
+                width={36}
+                height={36}
+                className="d-inline-block align-top"
+              />
               Write.link
             </Navbar.Brand>
             <Navbar.Toggle
@@ -70,11 +70,11 @@ function Header() {
                 </Nav.Item>
               </Nav>
               <div className="login-btn">
-                <Button 
+                <Button
                   className="btn btn-style btn-primary active"
-                  target="_blank"
+                  href="/auth"
                 >
-                  <Link href="/auth">Get Started</Link>
+                  Get Started
                 </Button>
               </div>
               {/* <Signin /> */}

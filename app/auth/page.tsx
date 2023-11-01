@@ -1,11 +1,14 @@
 "use client";
+
+
+
 import React from "react";
 import { SiweMessage } from "siwe";
 import { polygonMumbai } from "viem/chains";
 import { useAccount, useSignMessage } from "wagmi";
 import { useWeb3Modal } from "@web3modal/react";
 import { getCsrfToken, signIn } from "next-auth/react";
-
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 
 
@@ -44,7 +47,7 @@ const AuthPage = () => {
         message: JSON.stringify(message),
         signedMessage,
         redirect: true,
-        callbackUrl: '/hidden'
+        callbackUrl: '/stories'
       });
       if (response?.error) {
         console.log("Error occured:", response.error);
@@ -57,42 +60,48 @@ const AuthPage = () => {
   
   return (
      
-    <main className=" items-center justify-center mt-5">
-      {!isConnected && (
-        <>
-        <h2 className="mt-5">Firstly,</h2>
-        <p className="">you <span className="">need</span> to</p>
-        <button
-          className=""
-          onClick={() => open()}
-        >
-          Connect Wallet
-        </button>
-        </>
-      )}
-      {isConnected && !hasSigned && (
-        <>
-          <p className="text-xl font-semibold text-gray-400">
-            Welcome {address?.slice(0, 8)}...
-          </p>
-          <button
-            className="rounded-lg py-2 px-4 mt-2 bg-violet-700 hover:border hover:border-violet-700 hover:bg-transparent"
-            onClick={handleSign}
-          >
-            Sign Message to Login
-          </button>
-          <button
-            className="rounded-lg py-2 px-4 mt-2 bg-yellow-400 hover:border hover:border-orange-700 hover:bg-transparent"
-            onClick={() => open()}
-          >
-            Disconnect Wallet
-          </button>
-        </>
-      )}
-      {isConnected && hasSigned && (
-        <p>You are being authenticated. Please wait...</p>
-      )}
-    </main>
+   
+
+    <Container className="d-flex align-items-center justify-content-center mb-5" style={{ minHeight: "100vh" }}>
+    <Row>
+      <Col>
+        {!isConnected && (
+          <>
+            <div className="login-btn">
+                <button
+                  className="connectwallet"
+                  onClick={() => open()}
+                >
+                Connect Wallet
+                </button>
+              </div>
+          </>
+        )}
+        {isConnected && !hasSigned && (
+          <>
+            <p className="h3">
+              Welcome {address?.slice(0, 8)}...
+            </p>
+            <Button
+              className="connectwallet mb-5"
+              onClick={handleSign}
+            >
+              Sign Message to Login
+            </Button>
+            <Button
+              className="connectwallet mx-3 mb-5"
+              onClick={() => open()}
+            >
+              Disconnect Wallet
+            </Button>
+          </>
+        )}
+        {isConnected && hasSigned && (
+          <p>You are being authenticated. Please wait...</p>
+        )}
+      </Col>
+    </Row>
+  </Container>
   
   );
 };

@@ -7649,7 +7649,29 @@ h2.resp-accordion:first-child {
     line-height: 24px;
     font-family: 'DM Sans', sans-serif;
 }
+.connectwallet{
+    color: #fff;
+    background-color: #191919;
+    border-color: #191919;
+    padding: 16px 26px;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    transition: 0.3s ease-in;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-family: 'DM Sans', sans-serif;
+    border: 0;
+}
 
+
+.layoutcontainer{
+    min-height: 100vh;
+    display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     position :relative;
+  }
 
 /* middle */
 .pricing-columns .pricing-chart .plan ul li {
@@ -8235,8 +8257,16 @@ ul.list-body span {
 /*--/Foorer--*/
 footer.w3l-footer-29-main {
     background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right :0;
+    margin :0 auto;
 }
 
+.main{
+    flex:1;
+}
 
 .footer-grid-innv {
     max-width: 300px;

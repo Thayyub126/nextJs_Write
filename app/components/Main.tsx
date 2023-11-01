@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Button, Row, Col, Tab, Nav, Card } from "react-bootstrap";
-
+import Image from 'next/image';
+import Link from "next/link";
 
 // Your array of 10 images
 const allImages = [
@@ -347,14 +348,14 @@ const Main = () => {
                   </div>
                 </div>
                 <div className="card-footer">
-                  <a
+                  <Link
                     href="https://app.1w3.io/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-style btn-primary active"
                   >
                     <i className="fas fa-pen"></i> Start Writing
-                  </a>
+                  </Link>
                 </div>
               </Card>
             </Col>
@@ -413,14 +414,14 @@ const Main = () => {
                   </div>
                 </div>
                 <div className="card-footer">
-                  <a
+                  <Link
                     href="https://app.1w3.io/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-style btn-primary active"
                   >
                     <i className="fas fa-pen"></i> Start Writing
-                  </a>
+                  </Link>
                 </div>
               </Card>
             </Col>
@@ -458,14 +459,14 @@ const Main = () => {
                   </div>
                 </div>
                 <div className="card-footer">
-                  <a
+                  <Link
                     href="https://app.1w3.io/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-style btn-primary active"
                   >
                     <i className="fas fa-pen"></i> Start Writing
-                  </a>
+                  </Link>
                 </div>
               </Card>
             </Col>
