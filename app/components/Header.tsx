@@ -3,10 +3,18 @@ import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Connectwalletbutton from "./Connectwalletbutton";
+// import { useWeb3Modal } from "@web3modal/react";
+// import { useAccount } from "wagmi";
+// import { connected } from "process";
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
 
+  const [scrolled, setScrolled] = useState(false);
+  // const { address, isConnected } = useAccount();
+  // const { open } = useWeb3Modal();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -20,6 +28,21 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // const onSignIn = () => {
+  //   if (!connected) {
+  //     open();
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (isConnected) {
+  //     router.push("/auth");
+  //     console.log(address);
+  //   } else if (!isConnected && !address) {
+  //     router.push("/");
+  //   }
+  // }, [isConnected, address, router]);
 
   return (
     <>
@@ -70,12 +93,15 @@ function Header() {
                 </Nav.Item>
               </Nav>
               <div className="login-btn">
-                <Button
+                {/* <Button
                   className="btn btn-style btn-primary active"
+                  onClick={onSignIn}
                   href="/auth"
                 >
+                  {isConnected ? "Disconnect" : "Get Started"}
                   Get Started
-                </Button>
+                </Button> */}
+                <Connectwalletbutton />
               </div>
               {/* <Signin /> */}
             </Navbar.Collapse>

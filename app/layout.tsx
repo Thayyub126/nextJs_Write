@@ -20,12 +20,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;550;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className={inter.className}>
-        <div className="layoutcontainer">
+        <div>
           <Providers>
             <Header />
-            <div className="main">{children}</div>
-            <Footer />
+            <div>{children}</div>
+            {/* <Footer /> */}
           </Providers>
         </div>
       </body>
