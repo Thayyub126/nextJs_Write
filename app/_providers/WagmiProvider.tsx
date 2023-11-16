@@ -14,7 +14,7 @@ type WagmiProviderType = {
 };
 
 const chains = [polygonMumbai];
-const projectId = 'c62373acd2d76e040a7257ce21504fdf';
+const projectId = "c62373acd2d76e040a7257ce21504fdf";
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({

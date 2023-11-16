@@ -14,7 +14,7 @@ export const authOptions: AuthOptions = {
         signedMessage: { label: "Signed Message", type: "text" }, // aka signature
       },
       async authorize(credentials, req) {
-        console.log("\n\nHIT", credentials)
+        console.log("\n\nHIT", credentials);
         if (!credentials?.signedMessage || !credentials?.message) {
           return null;
         }
@@ -34,7 +34,7 @@ export const authOptions: AuthOptions = {
           const siwe = new SiweMessage(JSON.parse(credentials?.message));
           const result = await siwe.verify({
             signature: credentials.signedMessage,
-            nonce: await getCsrfToken({ req: {headers: req.headers} }),
+            nonce: await getCsrfToken({ req: { headers: req.headers } }),
           });
 
           if (!result.success) throw new Error("Invalid Signature");
@@ -44,7 +44,7 @@ export const authOptions: AuthOptions = {
 
           // if (new Date(result.data.expirationTime as string) < new Date())
           //   throw new Error("Signature Already expired");
-          console.log("Returning")
+          console.log("Returning");
           return {
             id: siwe.address,
           };
@@ -69,7 +69,7 @@ export const authOptions: AuthOptions = {
     },
   },
   pages: {
-    signIn:"/auth"
+    signIn: "/auth",
   },
 };
 
